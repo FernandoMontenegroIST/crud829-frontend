@@ -1,0 +1,14 @@
+<h2>Editar Transacción</h2>
+<form *ngIf="transaccion" (ngSubmit)="actualizarTransaccion()">
+  <label for="fecha_transaccion">Fecha:</label>
+  <input type="datetime-local" [(ngModel)]="transaccion.fecha_transaccion" name="fecha_transaccion" required>
+
+  <label for="cod_tipo_transaccion">Código Tipo:</label>
+  <input type="number" [(ngModel)]="transaccion.cod_tipo_transaccion" name="cod_tipo_transaccion" required>
+
+  <label for="cod_catalogo">Código Catálogo:</label>
+  <input type="number" [(ngModel)]="transaccion.cod_catalogo" name="cod_catalogo" required>
+
+  <button type="submit">Actualizar</button>
+</form>
+<a routerLink="/transacciones-list">Volver</a>

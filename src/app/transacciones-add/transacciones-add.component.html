@@ -1,0 +1,14 @@
+<h2>Agregar Nueva Transacción</h2>
+<form (ngSubmit)="agregarTransaccion()">
+  <label for="fecha_transaccion">Fecha:</label>
+  <input type="datetime-local" [(ngModel)]="nuevaTransaccion.fecha_transaccion" name="fecha_transaccion" required>
+
+  <label for="cod_tipo_transaccion">Código Tipo:</label>
+  <input type="number" [(ngModel)]="nuevaTransaccion.cod_tipo_transaccion" name="cod_tipo_transaccion" required>
+
+  <label for="cod_catalogo">Código Catálogo:</label>
+  <input type="number" [(ngModel)]="nuevaTransaccion.cod_catalogo" name="cod_catalogo" required>
+
+  <button type="submit">Guardar</button>
+</form>
+<a routerLink="/transacciones-list">Volver</a>

@@ -1,0 +1,23 @@
+<h2>Lista de Transacciones</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Fecha</th>
+    <th>Tipo</th>
+    <th>Catálogo</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let transaccion of transacciones">
+    <td>{{ transaccion.id_transaccion }}</td>
+    <td>{{ transaccion.fecha_transaccion | date:'short' }}</td>
+    <td>{{ transaccion.cod_tipo_transaccion }}</td>
+    <td>{{ transaccion.cod_catalogo }}</td>
+    <td>
+      <button *ngIf="transaccion.id_transaccion !== undefined" (click)="eliminarTransaccion(transaccion.id_transaccion)">Eliminar</button>
+      <a [routerLink]="['/transacciones-edit', transaccion.id_transaccion]">Editar</a>
+      <a [routerLink]="['/transacciones-delete', transaccion.id_transaccion]">Eliminar con confirmación</a>
+    </td>
+  </tr>
+</table>
+
+<a routerLink="/transacciones-add">Agregar nueva transacción</a>

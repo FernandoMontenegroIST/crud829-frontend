@@ -1,0 +1,9 @@
+<h2>Eliminar Transacción</h2>
+<p *ngIf="transaccion">
+  ¿Estás seguro de que deseas eliminar la transacción con ID: {{ transaccion.id_transaccion }}?
+</p>
+<nav>
+<button (click)="eliminarTransaccion()" *ngIf="transaccion">Eliminar</button>
+<button (click)="cancelar()">Cancelar</button>
+</nav>
+<a routerLink="/transacciones-list">Volver</a>
